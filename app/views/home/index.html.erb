@@ -1,1 +1,6 @@
-<h1>Hello world</h1>
+<% if user_signed_in? %>
+<% else %>
+<h1>Welcome to twitter</h1>
+<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"%>
+<%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary btn-lg"%>
+<% end %>
