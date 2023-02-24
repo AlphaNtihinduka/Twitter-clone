@@ -1,19 +1,4 @@
-<% if user_signed_in? %>
-<h1>We are logged in!</h1>
-<%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg" %>
-
-<%= form_with model: Tweet.new, url: tweets_path, method: :post, local: true do |f| %>
-    <%= f.text_field :body %>
-    <%= f.submit %>
-<% end %>
-
-<ul>
-    <%= Tweet.find_each do |tweet| %>
-       <li><%= tweet.body %></li> 
-    <% end %>
-</ul>
-<% else %>
 <h1>Welcome to twitter</h1>
 <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"%>
 <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary btn-lg"%>
-<% end %>
+
