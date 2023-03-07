@@ -1,13 +1,44 @@
-<h1>We are logged in!</h1>
-<%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg" %>
-
-<%= form_with model: Tweet.new, url: tweets_path, method: :post, local: true do |f| %>
-    <%= f.text_field :body %>
-    <%= f.submit %>
-<% end %>
-
-<ul>
-    <%= Tweet.find_each do |tweet| %>
-       <li><%= tweet.body %></li> 
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <%= link_to root_path, class: "d-flex align-items-center fs-4 mb-3"  do%>
+        <span class="me-4 position-relative bottom-3"><%= image_tag "twitter.png", size: "32" %></span>
     <% end %>
-</ul>
+    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "home.png", size: "32" %></span>Home
+    </div>
+    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "hastag.png", size: "32" %></span>Explore
+    </div>
+    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "alarm.png", size: "32" %></span>Notifications
+    </div>    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "email.png", size: "32" %></span>Messages
+    </div>
+    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "bookmark.png", size: "32" %></span>Bookmarks
+    </div>
+    <div class="d-flex align-items-center fs-4 mb-3">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "profile.png", size: "32" %></span>Profile
+    </div>
+    <div class="d-flex align-items-center fs-4 mb-3">
+         <%= button_tag "Tweet", class: "btn btn-lg rounded-pill btn-primary" %>
+    </div>
+    <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg" %>
+    </div>
+    <div class="col">
+      <%= form_with model: Tweet.new, url: tweets_path, method: :post, local: true do |f| %>
+        <%= f.text_field :body, placeholder: "What is on your mind..." %>
+        <%= f.submit %>
+         <% end %>
+        <ul>
+        <%= Tweet.find_each do |tweet| %>
+        <li><%= tweet.body %></li> 
+        <% end %>
+        </ul>
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
