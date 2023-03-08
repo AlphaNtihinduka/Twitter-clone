@@ -1,30 +1,46 @@
-<div class="container">
+<div class="container py-3">
   <div class="row">
-    <div class="col">
-    <%= link_to root_path, class: "d-flex align-items-center fs-4 mb-3"  do%>
-        <span class="me-4 position-relative bottom-3"><%= image_tag "twitter.png", size: "32" %></span>
+    <div class="col side-navbar">
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 px-3 mb-1 text-decoration-none"  do%>
+      <div class="px-2 py-2 rounded-pill">
+        <%= image_tag "twitter.png", size: "32" %>
+      </div>        
     <% end %>
-    <div class="d-flex align-items-center fs-4 mb-3">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "home.png", size: "32" %></span>Home
-    </div>
-    <div class="d-flex align-items-center fs-4 mb-3">
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+      <div class="px-3 py-1 rounded-pill">
+      <span class="me-4 position-relative bottom-3"><%= image_tag "home.png", size: "32" %></span>Home
+      </div>
+    <% end %>
+    
+
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+      <div class="px-3 py-1 rounded-pill">
         <span class="me-4 position-relative bottom-3"><%= image_tag "hastag.png", size: "32" %></span>Explore
-    </div>
-    <div class="d-flex align-items-center fs-4 mb-3">
+      </div>
+      <% end %>
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+      <div class="px-3 py-1 rounded-pill">
         <span class="me-4 position-relative bottom-3"><%= image_tag "alarm.png", size: "32" %></span>Notifications
-    </div>
-        <div class="d-flex align-items-center fs-4 mb-3">
+      </div>
+      <% end %>
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+      <div class="px-3 py-1 rounded-pill">
         <span class="me-4 position-relative bottom-3"><%= image_tag "email.png", size: "32" %></span>Messages
-    </div>
-    <div class="d-flex align-items-center fs-4 mb-3">
+      </div>
+      <% end %>
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+      <div class="px-3 py-1 rounded-pill">
         <span class="me-4 position-relative bottom-3"><%= image_tag "bookmark.png", size: "32" %></span>Bookmarks
-    </div>
-    <div class="d-flex align-items-center fs-4 mb-3">
+      </div>
+      <% end %>
+    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3 text-decoration-none"  do%>
+      <div class="px-4 py-2 rounded-pill">
         <span class="me-4 position-relative bottom-3"><%= image_tag "profile.png", size: "32" %></span>Profile
-    </div>
-    <div class="d-flex align-items-center fs-4 mb-3">
-         <%= button_tag "Tweet", class: "btn btn-lg rounded-pill btn-primary" %>
-    </div>
+      </div>
+      <% end %>
+
+         <%= button_tag "Tweet", class: "btn btn-lg rounded-pill btn-primary d-flex align-items-center fs-5 mb-2 px-5" %>
+  
     <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg" %>
     </div>
     <div class="col">
