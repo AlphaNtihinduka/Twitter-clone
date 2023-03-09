@@ -1,49 +1,47 @@
 <div class="container py-3">
   <div class="row">
-    <div class="col side-navbar">
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 px-3 mb-1 text-decoration-none"  do%>
-      <div class="px-2 py-2 rounded-pill">
-        <%= image_tag "twitter.png", size: "32" %>
-      </div>        
-    <% end %>
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
-      <div class="px-3 py-1 rounded-pill">
-      <span class="me-4 position-relative bottom-3"><%= image_tag "home.png", size: "32" %></span>Home
-      </div>
-    <% end %>
-    
-
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
-      <div class="px-3 py-1 rounded-pill">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "hastag.png", size: "32" %></span>Explore
-      </div>
+    <div class="col side-navbar vh-100 position-relative">
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 px-3 mb-1 text-decoration-none"  do%>
+        <div class="px-2 py-2 rounded-pill">
+          <%= image_tag "twitter.png", size: "32" %>
+        </div>        
       <% end %>
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
-      <div class="px-3 py-1 rounded-pill">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "alarm.png", size: "32" %></span>Notifications
-      </div>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+        <div class="px-3 py-1 rounded-pill">
+        <span class="me-4 position-relative bottom-3"><%= image_tag "home.png", size: "32" %></span>Home
+        </div>
       <% end %>
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
-      <div class="px-3 py-1 rounded-pill">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "email.png", size: "32" %></span>Messages
-      </div>
-      <% end %>
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
-      <div class="px-3 py-1 rounded-pill">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "bookmark.png", size: "32" %></span>Bookmarks
-      </div>
-      <% end %>
-    <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3 text-decoration-none"  do%>
-      <div class="px-4 py-2 rounded-pill">
-        <span class="me-4 position-relative bottom-3"><%= image_tag "profile.png", size: "32" %></span>Profile
-      </div>
-      <% end %>
-      <div class="text-center tweet-btn">
-         <%= button_tag "Tweet", class: "btn  btn-lg rounded-pill btn-twitter fs-5 mb-2 w-100" %>
-      </div>
-    <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg" %>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+        <div class="px-3 py-1 rounded-pill">
+          <span class="me-4 position-relative bottom-3"><%= image_tag "hastag.png", size: "32" %></span>Explore
+        </div>
+        <% end %>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+        <div class="px-3 py-1 rounded-pill">
+          <span class="me-4 position-relative bottom-3"><%= image_tag "alarm.png", size: "32" %></span>Notifications
+        </div>
+        <% end %>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+        <div class="px-3 py-1 rounded-pill">
+          <span class="me-4 position-relative bottom-3"><%= image_tag "email.png", size: "32" %></span>Messages
+        </div>
+        <% end %>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-1 text-decoration-none"  do%>
+        <div class="px-3 py-1 rounded-pill">
+          <span class="me-4 position-relative bottom-3"><%= image_tag "bookmark.png", size: "32" %></span>Bookmarks
+        </div>
+        <% end %>
+      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3 text-decoration-none"  do%>
+        <div class="px-4 py-2 rounded-pill">
+          <span class="me-4 position-relative bottom-3"><%= image_tag "profile.png", size: "32" %></span>Profile
+        </div>
+        <% end %>
+        <div class="text-center tweet-btn">
+          <%= button_tag "Tweet", class: "btn  btn-lg rounded-pill btn-twitter fs-5 mb-2 w-100" %>
+        </div>
+      <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg position-absolute bottom-0 mb-5" %>
     </div>
-    <div class="col-7">
+    <div class="col-6">
       <%= form_with model: Tweet.new, url: tweets_path, method: :post, local: true do |f| %>
         <%= f.text_field :body, placeholder: "What is on your mind..." %>
         <%= f.submit %>
