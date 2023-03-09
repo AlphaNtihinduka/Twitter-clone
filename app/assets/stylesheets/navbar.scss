@@ -1,6 +1,7 @@
 div.side-navbar {
     div:hover {
         background-color: $gray-200;
+        transition: all .1s ease-in;
     }
 
     a {
