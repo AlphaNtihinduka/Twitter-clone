@@ -1,0 +1,8 @@
+.tweet-input {
+    font-size: 1.4rem;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
