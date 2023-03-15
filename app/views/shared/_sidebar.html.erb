@@ -35,7 +35,24 @@
   </div>
   <% end %>
   <div class="text-center tweet-btn">
-    <%= button_tag "Tweet", class: "btn  btn-lg rounded-pill btn-twitter fs-5 mb-2 w-100" %>
+    <%= button_tag "Tweet", class: "btn  btn-lg rounded-pill btn-twitter fs-5 mb-2 w-100", data: {"bs-toggle": "modal", "bs-target": "#exampleModal" } %>
   </div>
 <%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-primary btn-lg position-absolute bottom-0 mb-5" %>
+</div>
+
+
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+      <div class="d-flex justify-content-start">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        
+      </div>
+      <div class="modal-body">
+            <%= render "shared/tweetform" %>
+      </div>
+    </div>
+  </div>
 </div>
